@@ -1,6 +1,6 @@
 function groupAnimals(animals) {
   // you can only write your code here!
-   
+   /*
     hewanA = [];
     hewanB = [];
     hewanC = [];
@@ -123,6 +123,34 @@ function groupAnimals(animals) {
     //console.log(alfaAnimals[1]);
 
   return hasil;
+  */
+
+ animals.sort();
+ // console.log(animals);
+  //console.log(animals[0+1][0]);
+  var arr = [];
+  var hasil = [];
+      for (var j = 0; j < animals.length-1; j++) {
+          if (animals[j][0] !== animals[j+1][0]) {
+              hasil.push(animals[j]);
+              arr.push(hasil);
+              hasil = [];
+               if (animals[j+1] === animals[animals.length-1]) {
+                  hasil.push(animals[j+1]);
+                  arr.push(hasil);
+                  hasil = [];
+               }
+          } else {
+              hasil.push(animals[j]);
+              if (animals[j+1] === animals[animals.length-1]) {
+                  hasil.push(animals[j+1]);
+                  arr.push(hasil);
+                  hasil = [];
+              }
+          }
+      }
+  
+  return arr;
 
 }
 
